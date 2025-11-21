@@ -27,15 +27,14 @@ export const Navbar: React.FC = () => {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Products', path: '/products' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Join Network', path: '/join' },
   ];
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Logo */}
@@ -54,9 +53,8 @@ export const Navbar: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors relative ${
-                  location.pathname === link.path ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'
-                }`}
+                className={`text-sm font-medium transition-colors relative ${location.pathname === link.path ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'
+                  }`}
               >
                 {link.name}
                 {location.pathname === link.path && (
@@ -67,7 +65,7 @@ export const Navbar: React.FC = () => {
                 )}
               </Link>
             ))}
-            
+
             {/* Search Trigger */}
             <button
               onClick={() => setIsSearchOpen(true)}
@@ -78,7 +76,7 @@ export const Navbar: React.FC = () => {
             </button>
 
             <Link
-              to="/contact"
+              to="/consult"
               className="bg-slate-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-slate-800 transition-colors hover:shadow-lg"
             >
               Get Started
@@ -87,14 +85,14 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-4 md:hidden">
-             <button
+            <button
               onClick={() => setIsSearchOpen(true)}
               className="p-2 text-slate-600"
               aria-label="Search"
             >
               <Search size={24} />
             </button>
-            
+
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -120,15 +118,14 @@ export const Navbar: React.FC = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`text-lg font-medium ${
-                      location.pathname === link.path ? 'text-blue-600' : 'text-slate-600'
-                    }`}
+                    className={`text-lg font-medium ${location.pathname === link.path ? 'text-blue-600' : 'text-slate-600'
+                      }`}
                   >
                     {link.name}
                   </Link>
                 ))}
                 <Link
-                  to="/contact"
+                  to="/consult"
                   className="bg-blue-600 text-white text-center py-3 rounded-lg font-medium mt-4"
                 >
                   Get Started

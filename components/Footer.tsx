@@ -25,25 +25,25 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Links */}
+          {/* For Patients */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
+            <h4 className="text-white font-semibold mb-4">For Patients</h4>
             <ul className="space-y-2 text-sm">
+              <li><Link to="/consult" className="hover:text-white transition-colors">Consult a Doctor</Link></li>
+              <li><Link to="/products" className="hover:text-white transition-colors">Health Products</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/products" className="hover:text-white transition-colors">Products</Link></li>
-              <li><Link to="#" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link to="#" className="hover:text-white transition-colors">News & Press</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Support Center</Link></li>
             </ul>
           </div>
 
-          {/* Links */}
+          {/* For Doctors */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Support</h4>
+            <h4 className="text-white font-semibold mb-4">For Doctors</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
-              <li><Link to="#" className="hover:text-white transition-colors">Help Center</Link></li>
-              <li><Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link to="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link to="/join" className="hover:text-white transition-colors">Join Platform</Link></li>
+              <li><Link to="#" className="hover:text-white transition-colors">Resources</Link></li>
+              <li><Link to="#" className="hover:text-white transition-colors">Case Studies</Link></li>
+              <li><Link to="#" className="hover:text-white transition-colors">Partner with Us</Link></li>
             </ul>
           </div>
 
