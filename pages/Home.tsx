@@ -46,7 +46,7 @@ export const Home: React.FC = () => {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-blue-900/80 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-primary-900/80 z-10"></div>
           <img
             src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2000&auto=format&fit=crop"
             alt="Medical Technology"
@@ -61,14 +61,14 @@ export const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 font-semibold text-sm mb-8 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 text-primary-200 border border-primary-500/30 font-semibold text-sm mb-8 backdrop-blur-sm">
               <HeartPulse size={16} />
               <span>The Future of Healthcare is Here</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
               Connecting You to <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Better Health</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Better Health</span>
             </h1>
 
             <p className="text-xl text-slate-200 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -76,7 +76,7 @@ export const Home: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1">
+              <button onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-primary-600 text-white rounded-full font-bold text-lg hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary-500/30 hover:-translate-y-1">
                 Get Started
               </button>
               <Link to="/about" className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-bold text-lg hover:bg-white/20 transition-all">
@@ -129,7 +129,7 @@ export const Home: React.FC = () => {
                 variants={itemVariants}
                 className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
               >
-                <div className="w-14 h-14 bg-white text-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-white text-primary-600 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform ring-1 ring-slate-100">
                   <feature.icon size={28} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
@@ -142,7 +142,7 @@ export const Home: React.FC = () => {
 
       {/* AI Tool Overview Section */}
       <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 via-slate-900 to-slate-900"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-900/40 via-slate-900 to-slate-900"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -152,13 +152,13 @@ export const Home: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs font-bold uppercase tracking-wider mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/20 text-primary-300 border border-primary-500/30 text-xs font-bold uppercase tracking-wider mb-6">
                 <Sparkles size={14} />
                 <span>Medicomix AI Engine</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
                 Smarter Diagnostics,<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Faster Recovery</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Faster Recovery</span>
               </h2>
               <p className="text-slate-300 text-lg mb-8 leading-relaxed">
                 Our proprietary AI analyzes thousands of data points to assist doctors in making accurate diagnoses faster. From symptom checking to predictive health trends, Medicomix AI is your 24/7 health companion.
@@ -172,13 +172,13 @@ export const Home: React.FC = () => {
                   'Personalized Wellness Plans'
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-slate-200">
-                    <CheckCircle className="text-teal-400 w-5 h-5 flex-shrink-0" />
+                    <CheckCircle className="text-secondary-400 w-5 h-5 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <button className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition-colors">
+              <button className="px-8 py-3 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-semibold transition-colors shadow-lg shadow-primary-500/20">
                 Start Self-Check
               </button>
             </motion.div>
@@ -190,7 +190,7 @@ export const Home: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-800/50 backdrop-blur-sm aspect-video flex items-center justify-center group">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/10"></div>
                 {/* Abstract UI Representation */}
                 <div className="relative z-10 w-3/4 h-3/4 bg-slate-900/80 rounded-xl border border-slate-600 p-6 flex flex-col gap-4">
                   <div className="flex items-center gap-4 mb-2">
@@ -198,7 +198,7 @@ export const Home: React.FC = () => {
                     <div className="h-4 w-1/3 bg-slate-700 rounded animate-pulse"></div>
                   </div>
                   <div className="h-32 bg-slate-800/50 rounded-lg border border-slate-700 p-4 relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-blue-500/10 to-transparent animate-[shimmer_2s_infinite]"></div>
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-primary-500/10 to-transparent animate-[shimmer_2s_infinite]"></div>
                     <div className="space-y-3">
                       <div className="h-2 w-3/4 bg-slate-700 rounded"></div>
                       <div className="h-2 w-1/2 bg-slate-700 rounded"></div>
@@ -206,7 +206,7 @@ export const Home: React.FC = () => {
                     </div>
                   </div>
                   <div className="mt-auto flex justify-end">
-                    <div className="h-8 w-24 bg-blue-600/80 rounded-md"></div>
+                    <div className="h-8 w-24 bg-primary-600/80 rounded-md"></div>
                   </div>
                 </div>
               </div>
@@ -237,22 +237,22 @@ export const Home: React.FC = () => {
                 step: '01',
                 title: 'Connect',
                 desc: 'Create your profile and input your symptoms or health data securely.',
-                bg: 'bg-blue-50',
-                text: 'text-blue-600'
+                bg: 'bg-primary-50',
+                text: 'text-primary-600'
               },
               {
                 step: '02',
                 title: 'Analyze',
                 desc: 'Our AI engine processes your data to identify potential conditions and matches.',
-                bg: 'bg-purple-50',
-                text: 'text-purple-600'
+                bg: 'bg-secondary-50',
+                text: 'text-secondary-600'
               },
               {
                 step: '03',
                 title: 'Care',
                 desc: 'Connect with a specialist for a consultation and personalized treatment plan.',
-                bg: 'bg-teal-50',
-                text: 'text-teal-600'
+                bg: 'bg-primary-50',
+                text: 'text-primary-600'
               }
             ].map((item, idx) => (
               <motion.div
@@ -263,7 +263,7 @@ export const Home: React.FC = () => {
                 transition={{ delay: idx * 0.2 }}
                 className="relative z-10 bg-white p-8 rounded-2xl border border-slate-100 shadow-lg text-center group hover:-translate-y-2 transition-transform duration-300"
               >
-                <div className={`w-16 h-16 mx-auto rounded-2xl ${item.bg} ${item.text} flex items-center justify-center text-xl font-bold mb-6 group-hover:scale-110 transition-transform`}>
+                <div className={`w-16 h-16 mx-auto rounded-2xl ${item.bg} ${item.text} flex items-center justify-center text-xl font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-slate-100`}>
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
@@ -284,7 +284,7 @@ export const Home: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Trusted by Professionals</h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-primary-600 mx-auto rounded-full"></div>
           </motion.div>
 
           <div className="relative">
@@ -299,7 +299,7 @@ export const Home: React.FC = () => {
                   className="w-full"
                 >
                   <div className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 text-center relative">
-                    <Quote className="w-12 h-12 text-blue-100 absolute top-8 left-8" />
+                    <Quote className="w-12 h-12 text-primary-100 absolute top-8 left-8" />
 
                     <div className="flex justify-center gap-1 mb-6">
                       {[1, 2, 3, 4, 5].map((star) => (
@@ -313,7 +313,7 @@ export const Home: React.FC = () => {
 
                     <div>
                       <div className="font-bold text-slate-900 text-lg">{TESTIMONIALS[currentTestimonial].name}</div>
-                      <div className="text-blue-600 font-medium text-sm">
+                      <div className="text-primary-600 font-medium text-sm">
                         {TESTIMONIALS[currentTestimonial].role}
                         {TESTIMONIALS[currentTestimonial].company && TESTIMONIALS[currentTestimonial].company !== 'N/A' && (
                           <span className="text-slate-400"> • {TESTIMONIALS[currentTestimonial].company}</span>
@@ -331,7 +331,7 @@ export const Home: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => setCurrentTestimonial(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${currentTestimonial === idx ? 'w-8 bg-blue-600' : 'w-2 bg-slate-300 hover:bg-slate-400'
+                  className={`h-2 rounded-full transition-all duration-300 ${currentTestimonial === idx ? 'w-8 bg-primary-600' : 'w-2 bg-slate-300 hover:bg-slate-400'
                     }`}
                   aria-label={`View testimonial ${idx + 1}`}
                 />
@@ -353,16 +353,16 @@ export const Home: React.FC = () => {
             {/* Patient Card */}
             <motion.div
               whileHover={{ y: -5 }}
-              className="bg-blue-50 p-10 rounded-3xl border border-blue-100 text-center flex flex-col items-center"
+              className="bg-primary-50 p-10 rounded-3xl border border-primary-100 text-center flex flex-col items-center"
             >
-              <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6">
                 <User size={32} />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">For Patients</h3>
               <p className="text-slate-600 mb-8">
                 Find the right specialist, get AI health insights, and take control of your wellbeing.
               </p>
-              <Link to="/consult" className="w-full py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-blue-500/25">
+              <Link to="/consult" className="w-full py-4 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-primary-500/25">
                 Consult a Doctor
               </Link>
             </motion.div>
@@ -370,16 +370,16 @@ export const Home: React.FC = () => {
             {/* Doctor Card */}
             <motion.div
               whileHover={{ y: -5 }}
-              className="bg-teal-50 p-10 rounded-3xl border border-teal-100 text-center flex flex-col items-center"
+              className="bg-secondary-50 p-10 rounded-3xl border border-secondary-100 text-center flex flex-col items-center"
             >
-              <div className="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-secondary-100 text-secondary-600 rounded-full flex items-center justify-center mb-6">
                 <Stethoscope size={32} />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">For Doctors</h3>
               <p className="text-slate-600 mb-8">
                 Join our network, access advanced diagnostic tools, and expand your digital practice.
               </p>
-              <Link to="/join" className="w-full py-4 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-700 transition-colors shadow-lg hover:shadow-teal-500/25">
+              <Link to="/join" className="w-full py-4 bg-secondary-600 text-white rounded-xl font-bold hover:bg-secondary-700 transition-colors shadow-lg hover:shadow-secondary-500/25">
                 I am a Doctor – Join Platform
               </Link>
             </motion.div>

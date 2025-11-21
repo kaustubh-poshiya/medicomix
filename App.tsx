@@ -9,10 +9,13 @@ import { Contact } from './pages/Contact';
 import { Join } from './pages/Join';
 import { Consult } from './pages/Consult';
 
+import { ScrollToTop } from './components/ScrollToTop';
+
 // App Wrapper
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
