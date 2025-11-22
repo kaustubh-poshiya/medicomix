@@ -43,14 +43,14 @@ export const Home: React.FC = () => {
   return (
     <div className="overflow-hidden font-sans">
       {/* Unified Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-50">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-primary-900/80 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/80 to-primary-50/50 z-10"></div>
           <img
             src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2000&auto=format&fit=crop"
             alt="Medical Technology"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-50"
           />
         </div>
 
@@ -61,17 +61,17 @@ export const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 text-primary-200 border border-primary-500/30 font-semibold text-sm mb-8 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-600 border border-primary-100 font-semibold text-sm mb-8 shadow-sm">
               <HeartPulse size={16} />
               <span>The Future of Healthcare is Here</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
               Connecting You to <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Better Health</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-500">Better Health</span>
             </h1>
 
-            <p className="text-xl text-slate-200 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
               Medicomix bridges the gap between patients and doctors with advanced AI diagnostics and seamless virtual care.
             </p>
 
@@ -79,7 +79,7 @@ export const Home: React.FC = () => {
               <button onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-primary-600 text-white rounded-full font-bold text-lg hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary-500/30 hover:-translate-y-1">
                 Get Started
               </button>
-              <Link to="/about" className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-bold text-lg hover:bg-white/20 transition-all">
+              <Link to="/about" className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
                 Learn More
               </Link>
             </div>
@@ -141,8 +141,8 @@ export const Home: React.FC = () => {
       </section>
 
       {/* AI Tool Overview Section */}
-      <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-900/40 via-slate-900 to-slate-900"></div>
+      <section className="py-24 bg-slate-50 overflow-hidden relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-100/50 via-slate-50 to-slate-50"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -152,15 +152,15 @@ export const Home: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/20 text-primary-300 border border-primary-500/30 text-xs font-bold uppercase tracking-wider mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 border border-primary-200 text-xs font-bold uppercase tracking-wider mb-6">
                 <Sparkles size={14} />
                 <span>Medicomix AI Engine</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
                 Smarter Diagnostics,<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Faster Recovery</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-500">Faster Recovery</span>
               </h2>
-              <p className="text-slate-300 text-lg mb-8 leading-relaxed">
+              <p className="text-slate-600 text-lg mb-8 leading-relaxed">
                 Our proprietary AI analyzes thousands of data points to assist doctors in making accurate diagnoses faster. From symptom checking to predictive health trends, Medicomix AI is your 24/7 health companion.
               </p>
 
@@ -171,14 +171,14 @@ export const Home: React.FC = () => {
                   'Automated Triage Support',
                   'Personalized Wellness Plans'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-200">
-                    <CheckCircle className="text-secondary-400 w-5 h-5 flex-shrink-0" />
+                  <li key={i} className="flex items-center gap-3 text-slate-700">
+                    <CheckCircle className="text-secondary-500 w-5 h-5 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <button className="px-8 py-3 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-semibold transition-colors shadow-lg shadow-primary-500/20">
+              <button className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold transition-colors shadow-lg shadow-primary-500/20">
                 Start Self-Check
               </button>
             </motion.div>
@@ -189,24 +189,24 @@ export const Home: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-800/50 backdrop-blur-sm aspect-video flex items-center justify-center group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/10"></div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white aspect-video flex items-center justify-center group">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-secondary-50/50"></div>
                 {/* Abstract UI Representation */}
-                <div className="relative z-10 w-3/4 h-3/4 bg-slate-900/80 rounded-xl border border-slate-600 p-6 flex flex-col gap-4">
+                <div className="relative z-10 w-3/4 h-3/4 bg-white rounded-xl border border-slate-100 p-6 flex flex-col gap-4 shadow-lg">
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="w-10 h-10 rounded-full bg-slate-700 animate-pulse"></div>
-                    <div className="h-4 w-1/3 bg-slate-700 rounded animate-pulse"></div>
+                    <div className="w-10 h-10 rounded-full bg-slate-100 animate-pulse"></div>
+                    <div className="h-4 w-1/3 bg-slate-100 rounded animate-pulse"></div>
                   </div>
-                  <div className="h-32 bg-slate-800/50 rounded-lg border border-slate-700 p-4 relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-primary-500/10 to-transparent animate-[shimmer_2s_infinite]"></div>
+                  <div className="h-32 bg-slate-50 rounded-lg border border-slate-100 p-4 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent animate-[shimmer_2s_infinite]"></div>
                     <div className="space-y-3">
-                      <div className="h-2 w-3/4 bg-slate-700 rounded"></div>
-                      <div className="h-2 w-1/2 bg-slate-700 rounded"></div>
-                      <div className="h-2 w-5/6 bg-slate-700 rounded"></div>
+                      <div className="h-2 w-3/4 bg-slate-200 rounded"></div>
+                      <div className="h-2 w-1/2 bg-slate-200 rounded"></div>
+                      <div className="h-2 w-5/6 bg-slate-200 rounded"></div>
                     </div>
                   </div>
                   <div className="mt-auto flex justify-end">
-                    <div className="h-8 w-24 bg-primary-600/80 rounded-md"></div>
+                    <div className="h-8 w-24 bg-primary-100 rounded-md"></div>
                   </div>
                 </div>
               </div>
