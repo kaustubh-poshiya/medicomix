@@ -10,8 +10,6 @@ import { Contact } from './pages/Contact';
 import { Join } from './pages/Join';
 import { Consult } from './pages/Consult';
 
-import { ScrollToTop } from './components/ScrollToTop';
-
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.div
@@ -46,7 +44,6 @@ const AnimatedRoutes = () => {
 const App: React.FC = () => {
   return (
     <Router>
-      <ScrollToTop />
       <Layout>
         <AnimatedRoutes />
       </Layout>

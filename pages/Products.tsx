@@ -15,7 +15,7 @@ export const Products: React.FC = () => {
   return (
     <div className="bg-slate-50 min-h-screen pb-20 font-sans">
       {/* Header */}
-      <div className="relative bg-slate-900 py-24 overflow-hidden">
+      <div className="relative bg-slate-900 pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-blue-900/80 z-0"></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
 
@@ -52,8 +52,8 @@ export const Products: React.FC = () => {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${activeCategory === cat
-                    ? 'bg-blue-600 text-white shadow-md transform scale-105'
-                    : 'bg-transparent text-slate-600 hover:bg-slate-100'
+                  ? 'bg-blue-600 text-white shadow-md transform scale-105'
+                  : 'bg-transparent text-slate-600 hover:bg-slate-100'
                   }`}
               >
                 {cat}

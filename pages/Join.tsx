@@ -25,7 +25,7 @@ export const Join: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
       {/* Header */}
-      <div className="bg-slate-900 py-20 relative overflow-hidden">
+      <div className="bg-slate-900 pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 to-slate-900/90 z-10"></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
 

@@ -25,7 +25,7 @@ export const Consult: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
       {/* Header */}
-      <div className="bg-blue-600 py-20 relative overflow-hidden">
+      <div className="bg-blue-600 pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 z-10"></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
 
@@ -110,8 +110,8 @@ export const Consult: React.FC = () => {
                         type="button"
                         onClick={() => setFormData({ ...formData, urgency: level })}
                         className={`py-3 rounded-xl text-sm font-bold capitalize border-2 transition-all ${formData.urgency === level
-                            ? 'border-blue-600 bg-blue-50 text-blue-700'
-                            : 'border-slate-100 bg-white text-slate-600 hover:border-slate-200'
+                          ? 'border-blue-600 bg-blue-50 text-blue-700'
+                          : 'border-slate-100 bg-white text-slate-600 hover:border-slate-200'
                           }`}
                       >
                         {level}

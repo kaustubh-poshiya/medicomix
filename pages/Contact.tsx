@@ -18,13 +18,13 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="bg-white">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="bg-slate-900 text-white py-24"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 }}
@@ -32,11 +32,11 @@ export const Contact: React.FC = () => {
           >
             Get in Touch
           </motion.h1>
-          <motion.p 
-             initial={{ y: 20, opacity: 0 }}
-             animate={{ y: 0, opacity: 1 }}
-             transition={{ delay: 0.2 }}
-             className="text-xl text-slate-300 max-w-2xl mx-auto"
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-slate-300 max-w-2xl mx-auto"
           >
             Have questions about our products or want to explore a partnership? We'd love to hear from you.
           </motion.p>
@@ -58,7 +58,7 @@ export const Contact: React.FC = () => {
                 { icon: Phone, title: 'Phone Support', text: <div><p className="mb-1">Mon-Fri from 8am to 5pm PST</p><a href="tel:+15551234567" className="text-blue-600 font-medium hover:underline">+1 (555) 123-4567</a></div> },
                 { icon: Mail, title: 'Email Us', text: <div><p className="mb-1">For general inquiries</p><a href="mailto:hello@medicomix.com" className="text-blue-600 font-medium hover:underline">hello@medicomix.com</a></div> }
               ].map((item, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -92,7 +92,7 @@ export const Contact: React.FC = () => {
             className="bg-white rounded-2xl shadow-xl p-8 md:p-10 border border-slate-100"
           >
             {submitted ? (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="h-full flex flex-col items-center justify-center text-center min-h-[400px]"
@@ -102,7 +102,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Message Sent!</h3>
                 <p className="text-slate-600">We'll get back to you within 24 hours.</p>
-                <button 
+                <button
                   onClick={() => setSubmitted(false)}
                   className="mt-8 text-blue-600 font-medium hover:underline"
                 >
@@ -112,12 +112,12 @@ export const Contact: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Send us a message</h2>
-                
+
                 <div className="grid grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-slate-700">First Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       required
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white"
                       placeholder="Jane"
@@ -125,8 +125,8 @@ export const Contact: React.FC = () => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-slate-700">Last Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       required
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white"
                       placeholder="Doe"
@@ -136,8 +136,8 @@ export const Contact: React.FC = () => {
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-slate-700">Email</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     required
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white"
                     placeholder="jane@company.com"
@@ -156,7 +156,7 @@ export const Contact: React.FC = () => {
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-slate-700">Message</label>
-                  <textarea 
+                  <textarea
                     required
                     rows={4}
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all resize-none focus:bg-white"
@@ -164,7 +164,7 @@ export const Contact: React.FC = () => {
                   ></textarea>
                 </div>
 
-                <motion.button 
+                <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"

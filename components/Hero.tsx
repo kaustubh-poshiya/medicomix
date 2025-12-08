@@ -9,16 +9,12 @@ import { StethoscopeModel } from './Stethoscope3D';
 
 import { TextReveal } from './ui/TextReveal';
 import { MagneticButton } from './ui/MagneticButton';
+import { HeroBackground } from './HeroBackground';
 
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-50">
-      {/* Background Gradient & Glows */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary-100 rounded-full blur-[100px] animate-pulse-glow opacity-60" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-secondary-100 rounded-full blur-[100px] opacity-60" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150 mix-blend-overlay"></div>
-      </div>
+      <HeroBackground />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
