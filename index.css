@@ -10,8 +10,14 @@
     font-family: 'Inter', sans-serif;
     color: #0f172a;
     /* slate-900 */
-    background-color: #f8fafc;
-    /* slate-50 */
+    background-color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #0ea5e9;
+    /* primary-500 */
+    color: #ffffff;
   }
 }
 

@@ -4,16 +4,18 @@ import { Activity, Twitter, Linkedin, Facebook, Mail, MapPin, Phone } from 'luci
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-50 text-slate-600 pt-16 pb-8 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-white text-slate-600 pt-16 pb-8 border-t border-slate-200 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-50/50 to-transparent pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="bg-gradient-to-tr from-secondary-500 to-primary-600 p-1.5 rounded-lg text-white shadow-sm">
+            <Link to="/" className="flex items-center gap-2 mb-6 group">
+              <div className="bg-gradient-to-tr from-secondary-500 to-primary-600 p-1.5 rounded-lg text-white shadow-lg shadow-primary-500/20 group-hover:rotate-3 transition-transform">
                 <Activity size={20} />
               </div>
-              <span className="text-xl font-bold text-slate-900">Medicomix</span>
+              <span className="text-xl font-bold text-slate-900 tracking-tight">Medicomix</span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-500 mb-6">
               Pioneering the future of healthcare with advanced diagnostics and personalized wellness solutions.
@@ -52,15 +54,15 @@ export const Footer: React.FC = () => {
             <h4 className="text-slate-900 font-bold mb-4">Get in Touch</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-primary-500 shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-primary-600 shrink-0 mt-0.5" />
                 <span>123 Innovation Drive, Tech Valley,<br />CA 94025, USA</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-primary-500 shrink-0" />
+                <Phone size={18} className="text-primary-600 shrink-0" />
                 <span>+1 (555) 123-4567</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-primary-500 shrink-0" />
+                <Mail size={18} className="text-primary-600 shrink-0" />
                 <span>contact@medicomix.com</span>
               </li>
             </ul>
