@@ -113,7 +113,8 @@ export const Navbar: React.FC = () => {
 
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-slate-900 p-2 hover:bg-slate-100 rounded-lg transition-colors"
+                className="text-slate-900 p-3 hover:bg-slate-100 rounded-lg transition-colors touch-manipulation"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -136,7 +137,8 @@ export const Navbar: React.FC = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`text-lg font-medium p-4 rounded-xl transition-colors border border-transparent ${location.pathname === link.path ? 'bg-primary-50 text-primary-600 border-primary-100' : 'text-slate-600 hover:bg-slate-50'
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-lg font-medium p-4 rounded-xl transition-colors border border-transparent active:scale-95 transform ${location.pathname === link.path ? 'bg-primary-50 text-primary-600 border-primary-100' : 'text-slate-600 hover:bg-slate-50'
                       }`}
                   >
                     {link.name}

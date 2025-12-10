@@ -43,7 +43,7 @@ export const Contact: React.FC = () => {
         </div>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="grid md:grid-cols-2 gap-16">
           {/* Contact Info */}
           <motion.div
@@ -119,7 +119,7 @@ export const Contact: React.FC = () => {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white text-base"
                       placeholder="Jane"
                     />
                   </div>
@@ -128,7 +128,7 @@ export const Contact: React.FC = () => {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white text-base"
                       placeholder="Doe"
                     />
                   </div>
@@ -139,14 +139,14 @@ export const Contact: React.FC = () => {
                   <input
                     type="email"
                     required
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white text-base"
                     placeholder="jane@company.com"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-slate-700">Subject</label>
-                  <select className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white">
+                  <select className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white text-base">
                     <option>Product Inquiry</option>
                     <option>Support Request</option>
                     <option>Partnership</option>
@@ -159,7 +159,7 @@ export const Contact: React.FC = () => {
                   <textarea
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all resize-none focus:bg-white"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all resize-none focus:bg-white text-base"
                     placeholder="How can we help you?"
                   ></textarea>
                 </div>

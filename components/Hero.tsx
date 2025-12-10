@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
-            The Future of <br />
+            The Future of <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-cyan-500 to-secondary-500">
               <TextReveal text="Intelligent Care" delay={0.5} />
             </span>
@@ -48,20 +48,20 @@ export const Hero: React.FC = () => {
             Medicomix combines advanced bio-analytics with generative AI to deliver personalized, real-time health insights.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <MagneticButton>
               <Link
                 to="/consult"
-                className="group relative px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/10 overflow-hidden block"
+                className="group relative px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/10 overflow-hidden block text-center"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center justify-center gap-2">
                   Get Started <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
             </MagneticButton>
 
             <MagneticButton>
-              <button className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all shadow-sm flex items-center gap-3 group">
+              <button className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all shadow-sm flex items-center justify-center gap-3 group w-full sm:w-auto">
                 <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
                   <Play size={18} className="fill-slate-900 text-slate-900 ml-1" />
                 </div>

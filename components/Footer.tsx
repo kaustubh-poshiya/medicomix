@@ -8,9 +8,9 @@ export const Footer: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-slate-50/50 to-transparent pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Brand */}
-          <div className="col-span-1 md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6 group">
               <div className="bg-gradient-to-tr from-secondary-500 to-primary-600 p-1.5 rounded-lg text-white shadow-lg shadow-primary-500/20 group-hover:rotate-3 transition-transform">
                 <Activity size={20} />
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <h4 className="text-slate-900 font-bold mb-4">Get in Touch</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">

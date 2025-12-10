@@ -23,7 +23,7 @@ export const Home: React.FC = () => {
       <Hero />
 
       {/* Why Medicomix - Bento Grid Value Proposition */}
-      <section className="py-32 relative bg-white">
+      <section className="py-16 md:py-32 relative bg-white">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-100/50 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -133,7 +133,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* AI Tool Overview Section */}
-      <section className="py-32 relative overflow-hidden bg-slate-50">
+      <section className="py-16 md:py-32 relative overflow-hidden bg-slate-50">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/80 to-white"></div>
         <div className="absolute left-0 bottom-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
 
@@ -211,7 +211,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-32 bg-white relative">
+      <section className="py-16 md:py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             className="text-center mb-16"
@@ -270,7 +270,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Testimonials Slider */}
-      <section className="py-24 relative overflow-hidden bg-slate-50">
+      <section className="py-12 md:py-24 relative overflow-hidden bg-slate-50">
         <div className="absolute inset-0 bg-primary-100/30"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -338,7 +338,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section id="get-started" className="py-32 relative bg-white">
+      <section id="get-started" className="py-16 md:py-32 relative bg-white">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-50 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
