@@ -1,23 +1,9 @@
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { TEAM } from '../constants';
 import { User, Stethoscope, Sparkles, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15
-    }
-  }
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
+import { TeamCard } from '../components/TeamCard';
 
 export const About: React.FC = () => {
   return (
@@ -177,35 +163,17 @@ export const About: React.FC = () => {
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">Meet the experts guiding our vision towards a healthier future.</p>
           </motion.div>
 
-          <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-          >
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {TEAM.map((member) => (
-              <motion.div
+              <TeamCard
                 key={member.id}
-                variants={cardVariants}
-                className="group cursor-pointer"
-              >
-                <div className="relative overflow-hidden rounded-2xl mb-5 shadow-sm">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full aspect-square object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0">
-                    <span className="text-white font-medium">View LinkedIn</span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{member.name}</h3>
-                <p className="text-blue-600 font-medium mb-3 text-sm">{member.role}</p>
-                <p className="text-slate-500 text-sm leading-relaxed">{member.bio}</p>
-              </motion.div>
+                name={member.name}
+                role={member.role}
+                bio={member.bio}
+                image={member.image}
+              />
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

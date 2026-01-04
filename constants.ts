@@ -1,5 +1,51 @@
 import { Product, TeamMember, Testimonial } from './types';
 
+export interface Service {
+  id: string;
+  name: string;
+  image: string;
+  link: string;
+}
+
+export const SERVICES: Service[] = [
+  {
+    id: '1',
+    name: 'Primary Care',
+    image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&h=800&fit=crop',
+    link: '/consult',
+  },
+  {
+    id: '2',
+    name: 'Cardiology',
+    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=800&fit=crop',
+    link: '/consult',
+  },
+  {
+    id: '3',
+    name: 'Dermatology',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=800&fit=crop',
+    link: '/consult',
+  },
+  {
+    id: '4',
+    name: 'Neurology',
+    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=800&fit=crop',
+    link: '/consult',
+  },
+  {
+    id: '5',
+    name: 'Orthopedics',
+    image: 'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=600&h=800&fit=crop',
+    link: '/consult',
+  },
+  {
+    id: '6',
+    name: 'Pediatrics',
+    image: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&h=800&fit=crop',
+    link: '/consult',
+  },
+];
+
 export const PRODUCTS: Product[] = [
   {
     id: '1',

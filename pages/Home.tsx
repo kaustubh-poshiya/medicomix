@@ -3,7 +3,9 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { ArrowRight, Shield, Activity, Quote, Star, Stethoscope, User, Brain, Sparkles, CheckCircle, Smartphone, Zap, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Hero } from '../components/Hero';
+import { OurServices } from '../components/OurServices';
 import { TESTIMONIALS } from '../constants';
+import { ThreeDImageRing } from "@/components/ui/draggable-3d-image-ring";
 
 // Animation Variants removed as they are no longer used by the Bento Grid implementation
 
@@ -265,6 +267,37 @@ export const Home: React.FC = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* Our Services - 3D Image Ring Section */}
+      <section className="py-16 md:py-24 relative bg-slate-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            className="text-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 mb-4">Our Services</h2>
+            <p className="text-slate-600 text-lg">Comprehensive care across multiple specialties</p>
+          </motion.div>
+          <div className="h-[500px] flex items-center justify-center">
+            <ThreeDImageRing
+              items={[
+                { image: "https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg?auto=compress&cs=tinysrgb&w=800", title: "Cardiology" },
+                { image: "https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=800", title: "Neurology" },
+                { image: "https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=800", title: "General Surgery" },
+                { image: "https://images.pexels.com/photos/4226219/pexels-photo-4226219.jpeg?auto=compress&cs=tinysrgb&w=800", title: "Orthopedics" },
+                { image: "https://images.pexels.com/photos/6502019/pexels-photo-6502019.jpeg?auto=compress&cs=tinysrgb&w=800", title: "Dentistry" },
+                { image: "https://images.pexels.com/photos/5473185/pexels-photo-5473185.jpeg?auto=compress&cs=tinysrgb&w=800", title: "Dermatology" },
+                { image: "https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=800", title: "Gynecology" },
+                { image: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800", title: "Pediatrics" },
+              ]}
+              autoRotateSpeed = {10}
+            />
           </div>
         </div>
       </section>
