@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Activity, Search } from 'lucide-react';
+import { Menu, X, Activity, Search, Home, Info, Package, Stethoscope, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SearchOverlay } from './SearchOverlay';
 
@@ -23,10 +23,11 @@ export const Navbar: React.FC = () => {
   }, [location]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Products', path: '/products' },
-    { name: 'Join Network', path: '/join' },
+    { name: 'Home', path: '/', icon: Home },
+    { name: 'About Us', path: '/about', icon: Info },
+    { name: 'Products', path: '/products', icon: Package },
+    { name: 'For Doctors', path: '/join', icon: Stethoscope },
+    { name: 'Contact', path: '/contact', icon: Mail },
   ];
 
   return (
@@ -138,9 +139,10 @@ export const Navbar: React.FC = () => {
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-lg font-medium p-4 rounded-xl transition-colors border border-transparent active:scale-95 transform ${location.pathname === link.path ? 'bg-primary-50 text-primary-600 border-primary-100' : 'text-slate-600 hover:bg-slate-50'
+                    className={`flex items-center gap-3 text-lg font-medium p-4 rounded-xl transition-colors border border-transparent active:scale-95 transform ${location.pathname === link.path ? 'bg-primary-50 text-primary-600 border-primary-100' : 'text-slate-600 hover:bg-slate-50'
                       }`}
                   >
+                    <link.icon size={20} className={location.pathname === link.path ? 'text-primary-600' : 'text-slate-400'} />
                     {link.name}
                   </Link>
                 ))}

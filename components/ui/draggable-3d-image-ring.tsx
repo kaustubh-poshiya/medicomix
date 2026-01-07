@@ -101,6 +101,7 @@ export function ThreeDImageRing({
 
   const [currentScale, setCurrentScale] = useState(1);
   const [showImages, setShowImages] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   // Convert images array to items array for backward compatibility
   const imageItems: ImageItem[] = useMemo(() => {
@@ -243,6 +244,10 @@ export function ThreeDImageRing({
     velocity.current = 0; // Reset velocity
     if (ringRef.current) {
       (ringRef.current as HTMLElement).style.cursor = "grabbing";
+    }
+    // Mark as interacted to hide the hint
+    if (!hasInteracted) {
+      setHasInteracted(true);
     }
     // Attach global move and end listeners to document when dragging starts
     document.addEventListener("mousemove", handleDrag);
@@ -436,6 +441,32 @@ export function ThreeDImageRing({
           </AnimatePresence>
         </motion.div>
       </div>
+
+      {/* Drag Hint */}
+      {draggable && !hasInteracted && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-slate-200"
+        >
+          <svg
+            className="w-5 h-5 text-slate-500 animate-pulse"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"
+            />
+          </svg>
+          <span className="text-sm font-medium text-slate-600">Drag to explore</span>
+        </motion.div>
+      )}
     </div>
   );
 }

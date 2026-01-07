@@ -43,9 +43,9 @@ export const Footer: React.FC = () => {
             <h4 className="text-slate-900 font-bold mb-4">For Doctors</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/join" className="hover:text-primary-600 transition-colors">Join Platform</Link></li>
-              <li><Link to="#" className="hover:text-primary-600 transition-colors">Resources</Link></li>
-              <li><Link to="#" className="hover:text-primary-600 transition-colors">Case Studies</Link></li>
-              <li><Link to="#" className="hover:text-primary-600 transition-colors">Partner with Us</Link></li>
+              <li><Link to="/about" className="hover:text-primary-600 transition-colors">Resources</Link></li>
+              <li><Link to="/about" className="hover:text-primary-600 transition-colors">Case Studies</Link></li>
+              <li><Link to="/contact" className="hover:text-primary-600 transition-colors">Partner with Us</Link></li>
             </ul>
           </div>
 
@@ -66,6 +66,29 @@ export const Footer: React.FC = () => {
                 <span>contact@medicomix.com</span>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Newsletter Signup */}
+        <div className="border-t border-slate-200 pt-8 mb-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <h4 className="text-slate-900 font-bold mb-2">Stay Updated</h4>
+              <p className="text-sm text-slate-500">Get the latest health insights and platform updates.</p>
+            </div>
+            <form className="flex gap-3 w-full md:w-auto" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 md:w-64 px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              />
+              <button
+                type="submit"
+                className="px-5 py-2.5 bg-primary-600 text-white rounded-lg text-sm font-semibold hover:bg-primary-700 transition-colors shadow-sm"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
 

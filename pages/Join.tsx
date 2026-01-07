@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Stethoscope, CheckCircle, ArrowRight, Shield, Activity } from 'lucide-react';
+import { PageHeader } from '../components/ui/PageHeader';
 
 export const Join: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,29 +26,13 @@ export const Join: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
       {/* Header */}
-      <div className="bg-slate-900 pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 to-slate-900/90 z-10"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 text-sm font-bold uppercase tracking-wider mb-6">
-              <Stethoscope size={16} />
-              <span>For Medical Professionals</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Join the Future of Medical Practice
-            </h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto font-light">
-              Expand your reach, access AI-driven diagnostics, and collaborate with a global network of specialists.
-            </p>
-          </motion.div>
-        </div>
-      </div>
+      <PageHeader
+        title="Join the Future of Medical Practice"
+        subtitle="Expand your reach, access AI-driven diagnostics, and collaborate with a global network of specialists."
+        badge={{ icon: Stethoscope, text: 'For Medical Professionals' }}
+        variant="dark"
+        backgroundImage="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2000&auto=format&fit=crop"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-16">
@@ -121,6 +106,7 @@ export const Join: React.FC = () => {
                       type="text"
                       name="name"
                       required
+                      autoComplete="name"
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all"
                       placeholder="Dr. John Doe"
                       value={formData.name}
@@ -167,6 +153,7 @@ export const Join: React.FC = () => {
                       type="email"
                       name="email"
                       required
+                      autoComplete="email"
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all"
                       placeholder="doctor@example.com"
                       value={formData.email}
@@ -179,6 +166,7 @@ export const Join: React.FC = () => {
                       type="tel"
                       name="phone"
                       required
+                      autoComplete="tel"
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all"
                       placeholder="+1 (555) 000-0000"
                       value={formData.phone}
@@ -203,6 +191,8 @@ export const Join: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-12"
+                role="status"
+                aria-live="polite"
               >
                 <div className="w-20 h-20 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle size={40} />

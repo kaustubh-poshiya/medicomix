@@ -69,6 +69,10 @@ export default {
           '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
           '50%': { opacity: '1', transform: 'scale(1.1)' },
         }
+      },
+      letterSpacing: {
+        tightest: '-0.05em',
+        tighter: '-0.025em',
       }
     },
   },

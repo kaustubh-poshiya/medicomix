@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { User, Calendar, Clock, ArrowRight, ShieldCheck, Heart } from 'lucide-react';
+import { PageHeader } from '../components/ui/PageHeader';
 
 export const Consult: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,29 +26,13 @@ export const Consult: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
       {/* Header */}
-      <div className="bg-blue-600 pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 z-10"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white border border-white/30 text-sm font-bold uppercase tracking-wider mb-6">
-              <User size={16} />
-              <span>Patient Care</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Book Your Consultation
-            </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto font-light">
-              Connect with a specialist in minutes. Our AI-powered matching ensures you get the right care, right away.
-            </p>
-          </motion.div>
-        </div>
-      </div>
+      <PageHeader
+        title="Book Your Consultation"
+        subtitle="Connect with a specialist in minutes. Our AI-powered matching ensures you get the right care, right away."
+        badge={{ icon: User, text: 'Patient Care' }}
+        variant="primary"
+        backgroundImage="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2000&auto=format&fit=crop"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-16">
@@ -68,6 +53,7 @@ export const Consult: React.FC = () => {
                     type="text"
                     name="name"
                     required
+                    autoComplete="name"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                     placeholder="Jane Doe"
                     value={formData.name}
@@ -81,6 +67,7 @@ export const Consult: React.FC = () => {
                     type="email"
                     name="email"
                     required
+                    autoComplete="email"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                     placeholder="jane@example.com"
                     value={formData.email}
@@ -144,6 +131,8 @@ export const Consult: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-12"
+                role="status"
+                aria-live="polite"
               >
                 <div className="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Heart size={40} />

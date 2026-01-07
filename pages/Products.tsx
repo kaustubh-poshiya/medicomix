@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Filter, ShoppingBag, Check, Sparkles, ArrowRight } from 'lucide-react';
 import { PRODUCTS } from '../constants';
 import { Link } from 'react-router-dom';
+import { PageHeader } from '../components/ui/PageHeader';
 
 export const Products: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -15,29 +16,12 @@ export const Products: React.FC = () => {
   return (
     <div className="bg-slate-50 min-h-screen pb-20 font-sans">
       {/* Header */}
-      <div className="relative bg-slate-900 pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-blue-900/80 z-0"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
-          >
-            Our Solutions
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed"
-          >
-            Cutting-edge technology designed to monitor, manage, and improve your health with the power of AI.
-          </motion.p>
-        </div>
-      </div>
+      <PageHeader
+        title="Our Solutions"
+        subtitle="Cutting-edge technology designed to monitor, manage, and improve your health with the power of AI."
+        variant="gradient"
+        backgroundImage="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2000&auto=format&fit=crop"
+      />
 
       {/* Filters */}
       <div className="sticky top-20 z-30 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">

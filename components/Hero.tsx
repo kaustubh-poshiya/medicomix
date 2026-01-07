@@ -136,6 +136,70 @@ export const Hero: React.FC = () => {
             <div className="text-sm text-slate-600 font-medium">Commitment to your well-being</div>
           </motion.div>
         </motion.div>
+
+        {/* Mobile Fallback - Stats Cards (shown when 3D is hidden) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="lg:hidden mt-12"
+        >
+          <div className="grid grid-cols-2 gap-4">
+            {/* Patient Satisfaction Card */}
+            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-lg">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                  <Star size={14} fill="currentColor" />
+                </div>
+                <span className="text-xs text-slate-500 font-medium">Patients Trust Us</span>
+              </div>
+              <div className="text-slate-900 font-bold text-3xl mb-1">99%</div>
+              <div className="text-sm text-slate-600">Satisfaction Rate</div>
+              <div className="w-full bg-slate-100 h-1.5 mt-3 rounded-full overflow-hidden">
+                <div className="bg-yellow-500 h-full w-[99%]"></div>
+              </div>
+            </div>
+
+            {/* Commitment Card */}
+            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-lg">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                  <Heart size={14} fill="currentColor" />
+                </div>
+                <span className="text-xs text-slate-500 font-medium">Our Promise</span>
+              </div>
+              <div className="text-slate-900 font-bold text-3xl mb-1">100%</div>
+              <div className="text-sm text-slate-600">Commitment</div>
+              <div className="w-full bg-slate-100 h-1.5 mt-3 rounded-full overflow-hidden">
+                <div className="bg-red-400 h-full w-full"></div>
+              </div>
+            </div>
+
+            {/* Active Doctors Card */}
+            <div className="bg-gradient-to-br from-primary-600 to-primary-700 p-5 rounded-2xl shadow-lg text-white">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                  <Activity size={14} />
+                </div>
+                <span className="text-xs font-medium opacity-80">Network</span>
+              </div>
+              <div className="font-bold text-3xl mb-1">500+</div>
+              <div className="text-sm opacity-80">Active Doctors</div>
+            </div>
+
+            {/* Global Reach Card */}
+            <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 p-5 rounded-2xl shadow-lg text-white">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                  <ShieldCheck size={14} />
+                </div>
+                <span className="text-xs font-medium opacity-80">Coverage</span>
+              </div>
+              <div className="font-bold text-3xl mb-1">30+</div>
+              <div className="text-sm opacity-80">Countries</div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

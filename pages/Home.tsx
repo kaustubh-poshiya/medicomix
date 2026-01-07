@@ -11,13 +11,16 @@ import { ThreeDImageRing } from "@/components/ui/draggable-3d-image-ring";
 
 export const Home: React.FC = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused) return;
+
     const timer = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isPaused]);
 
   return (
     <div className="font-sans bg-white text-slate-900 overflow-hidden selection:bg-primary-100 selection:text-primary-900">
@@ -273,7 +276,7 @@ export const Home: React.FC = () => {
 
 
       {/* Our Services - 3D Image Ring Section */}
-      <section className="py-16 md:py-24 relative bg-slate-50 overflow-hidden">
+      <section className="py-16 md:py-32 relative bg-slate-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-8"
@@ -296,14 +299,14 @@ export const Home: React.FC = () => {
                 { image: "https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=800", title: "Gynecology" },
                 { image: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800", title: "Pediatrics" },
               ]}
-              autoRotateSpeed = {10}
+              autoRotateSpeed={10}
             />
           </div>
         </div>
       </section>
 
       {/* Testimonials Slider */}
-      <section className="py-12 md:py-24 relative overflow-hidden bg-slate-50">
+      <section className="py-16 md:py-32 relative overflow-hidden bg-slate-50">
         <div className="absolute inset-0 bg-primary-100/30"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -316,7 +319,11 @@ export const Home: React.FC = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent mx-auto rounded-full"></div>
           </motion.div>
 
-          <div className="relative">
+          <div
+            className="relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <div className="min-h-[300px] flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -355,15 +362,18 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Navigation Dots */}
-            <div className="flex justify-center gap-3 mt-8">
+            <div className="flex justify-center gap-4 mt-8">
               {TESTIMONIALS.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentTestimonial(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${currentTestimonial === idx ? 'w-8 bg-primary-600 shadow-lg' : 'w-2 bg-slate-300 hover:bg-slate-400'
+                  className={`rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${currentTestimonial === idx ? 'bg-primary-100' : 'bg-transparent hover:bg-slate-100'
                     }`}
                   aria-label={`View testimonial ${idx + 1}`}
-                />
+                >
+                  <span className={`block rounded-full transition-all duration-300 ${currentTestimonial === idx ? 'w-8 h-2.5 bg-primary-600' : 'w-2.5 h-2.5 bg-slate-300'
+                    }`} />
+                </button>
               ))}
             </div>
           </div>

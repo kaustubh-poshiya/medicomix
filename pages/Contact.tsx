@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, Loader2, Check } from 'lucide-react';
+import { PageHeader } from '../components/ui/PageHeader';
 
 export const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,30 +19,11 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="bg-white">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="bg-slate-900 text-white py-24"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold mb-6"
-          >
-            Get in Touch
-          </motion.h1>
-          <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-slate-300 max-w-2xl mx-auto"
-          >
-            Have questions about our products or want to explore a partnership? We'd love to hear from you.
-          </motion.p>
-        </div>
-      </motion.div>
+      <PageHeader
+        title="Get in Touch"
+        subtitle="Have questions about our products or want to explore a partnership? We'd love to hear from you."
+        variant="gradient"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="grid md:grid-cols-2 gap-16">
@@ -96,18 +78,30 @@ export const Contact: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="h-full flex flex-col items-center justify-center text-center min-h-[400px]"
+                role="status"
+                aria-live="polite"
               >
                 <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 shadow-sm">
                   <Check size={40} />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Message Sent!</h3>
-                <p className="text-slate-600">We'll get back to you within 24 hours.</p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="mt-8 text-blue-600 font-medium hover:underline"
-                >
-                  Send another message
-                </button>
+                <p className="text-slate-600 mb-4">We'll get back to you within 24 hours.</p>
+                <p className="text-sm text-slate-500 mb-6">While you wait, explore our health solutions.</p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="/products"
+                    className="text-blue-600 font-medium hover:underline"
+                  >
+                    View Products
+                  </a>
+                  <span className="hidden sm:inline text-slate-300">|</span>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="text-slate-500 font-medium hover:underline"
+                  >
+                    Send another message
+                  </button>
+                </div>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -119,6 +113,7 @@ export const Contact: React.FC = () => {
                     <input
                       type="text"
                       required
+                      autoComplete="given-name"
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white text-base"
                       placeholder="Jane"
                     />
@@ -128,6 +123,7 @@ export const Contact: React.FC = () => {
                     <input
                       type="text"
                       required
+                      autoComplete="family-name"
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white text-base"
                       placeholder="Doe"
                     />
@@ -139,6 +135,7 @@ export const Contact: React.FC = () => {
                   <input
                     type="email"
                     required
+                    autoComplete="email"
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all focus:bg-white text-base"
                     placeholder="jane@company.com"
                   />

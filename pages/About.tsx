@@ -4,32 +4,18 @@ import { TEAM } from '../constants';
 import { User, Stethoscope, Sparkles, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TeamCard } from '../components/TeamCard';
+import { PageHeader } from '../components/ui/PageHeader';
 
 export const About: React.FC = () => {
   return (
     <div className="bg-slate-50 font-sans">
       {/* Header */}
-      <div className="bg-white py-24 border-b border-slate-100 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-teal-50 opacity-50"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight"
-          >
-            About Medicomix
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed"
-          >
-            We are a collective of doctors, engineers, and visionaries dedicated to making advanced healthcare accessible to everyone through technology.
-          </motion.p>
-        </div>
-      </div>
+      <PageHeader
+        title="About Medicomix"
+        subtitle="We are a collective of doctors, engineers, and visionaries dedicated to making advanced healthcare accessible to everyone through technology."
+        variant="gradient"
+        backgroundImage="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop"
+      />
 
       {/* Mission Section */}
       <section className="py-24 overflow-hidden">
@@ -174,6 +160,38 @@ export const About: React.FC = () => {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              Ready to Experience Medicomix?
+            </h2>
+            <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
+              Join thousands of patients and healthcare providers who are already benefiting from our AI-powered platform.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/consult"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 transition-all shadow-lg shadow-primary-500/20"
+              >
+                Book a Consultation <ArrowRight size={20} />
+              </Link>
+              <Link
+                to="/products"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 border-2 border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all"
+              >
+                Explore Products
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
