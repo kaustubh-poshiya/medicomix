@@ -11,11 +11,19 @@ export const HeroBackground = () => {
         transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute inset-0"
       >
-        <img
-          src="/dna-spiral.jpeg"
-          alt=""
-          className="w-full h-full object-cover"
-        />
+        <picture>
+          {/* Mobile-optimized portrait image */}
+          <source
+            media="(max-width: 768px)"
+            srcSet="/dna-spiral-mobile.png"
+          />
+          {/* Desktop landscape image */}
+          <img
+            src="/dna-spiral.jpeg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </picture>
       </motion.div>
 
       {/* Gradient Overlay for text readability */}
