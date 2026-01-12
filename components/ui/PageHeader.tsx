@@ -54,7 +54,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   const styles = variantStyles[variant];
 
   return (
-    <div className={cn('pt-32 pb-20 relative overflow-hidden', styles.container)}>
+    <div className={cn('pt-40 pb-20 relative overflow-hidden -mt-24', styles.container)}>
       {/* Background gradient overlay */}
       <div className="absolute inset-0 z-10" />
 

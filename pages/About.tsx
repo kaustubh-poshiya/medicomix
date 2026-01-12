@@ -8,7 +8,7 @@ import { PageHeader } from '../components/ui/PageHeader';
 
 export const About: React.FC = () => {
   return (
-    <div className="bg-slate-50 font-sans">
+    <div className="bg-slate-50 min-h-screen pb-20 font-sans">
       {/* Header */}
       <PageHeader
         title="About Medicomix"
