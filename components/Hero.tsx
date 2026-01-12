@@ -1,11 +1,8 @@
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { Environment, OrbitControls, ContactShadows, Float } from '@react-three/drei';
 import { ArrowRight, Play, ShieldCheck, Activity, Heart, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { StethoscopeModel } from './Stethoscope3D';
 
 import { TextReveal } from './ui/TextReveal';
 import { MagneticButton } from './ui/MagneticButton';
@@ -13,46 +10,46 @@ import { HeroBackground } from './HeroBackground';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-50">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       <HeroBackground />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        {/* Main Content - Centered */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-left"
+          className="text-center lg:text-left max-w-3xl"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-primary-600 text-sm font-medium mb-6 shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
             </span>
             Reimagining Healthcare with AI
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
             The Future of <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-cyan-500 to-secondary-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-primary-400 to-secondary-400">
               <TextReveal text="Intelligent Care" delay={0.5} />
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-xl leading-relaxed">
+          <p className="text-lg md:text-xl text-white/80 mb-8 max-w-xl leading-relaxed mx-auto lg:mx-0">
             Medicomix combines advanced bio-analytics with generative AI to deliver personalized, real-time health insights.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <MagneticButton>
               <Link
                 to="/consult"
-                className="group relative px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/10 overflow-hidden block text-center"
+                className="group relative px-8 py-4 bg-white text-slate-900 rounded-full font-bold text-lg hover:bg-white/90 transition-all shadow-xl overflow-hidden block text-center"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Get Started <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -61,142 +58,87 @@ export const Hero: React.FC = () => {
             </MagneticButton>
 
             <MagneticButton>
-              <button className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all shadow-sm flex items-center justify-center gap-3 group w-full sm:w-auto">
-                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                  <Play size={18} className="fill-slate-900 text-slate-900 ml-1" />
+              <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3 group w-full sm:w-auto">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                  <Play size={18} className="fill-white text-white ml-1" />
                 </div>
                 <span>Watch Demo</span>
               </button>
             </MagneticButton>
           </div>
 
-          <div className="mt-12 flex items-center gap-8 text-slate-500 text-sm font-medium">
+          <div className="mt-12 flex items-center gap-8 text-white/70 text-sm font-medium justify-center lg:justify-start">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="text-primary-600" size={18} />
+              <ShieldCheck className="text-cyan-400" size={18} />
               <span>HIPAA Compliant</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="text-primary-600" size={18} />
+              <ShieldCheck className="text-cyan-400" size={18} />
               <span>End-to-End Encrypted</span>
             </div>
           </div>
         </motion.div>
 
-        {/* Right Visual - 3D Interactive Stethoscope */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative h-[600px] w-full hidden lg:block"
-        >
-          <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 8], fov: 45 }}>
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
-            <Suspense fallback={null}>
-              <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-                <StethoscopeModel />
-              </Float>
-              <ContactShadows position={[0, -2.5, 0]} opacity={0.4} scale={10} blur={2.5} far={4} />
-              <Environment preset="city" />
-            </Suspense>
-            <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
-          </Canvas>
-
-          {/* Floating UI Cards */}
-          <motion.div
-            animate={{ y: [0, -15, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 right-10 bg-white/80 backdrop-blur-md p-4 rounded-2xl border border-slate-200 shadow-xl max-w-[220px] z-20 pointer-events-none"
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
-                <Star size={16} fill="currentColor" />
-              </div>
-              <div className="text-xs text-slate-500 font-medium">Trusted by Patients</div>
-            </div>
-            <div className="text-slate-900 font-bold text-2xl">99%</div>
-            <div className="text-sm text-slate-600 font-medium">Patient Satisfaction</div>
-            <div className="w-full bg-slate-100 h-1 mt-2 rounded-full overflow-hidden">
-              <div className="bg-yellow-500 h-full w-[99%]"></div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: [0, 15, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-32 left-0 bg-white/80 backdrop-blur-md p-4 rounded-2xl border border-slate-200 shadow-xl max-w-[240px] z-20 pointer-events-none"
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600">
-                <Heart size={16} fill="currentColor" />
-              </div>
-              <div className="text-xs text-slate-500 font-medium">Our Promise</div>
-            </div>
-            <div className="text-slate-900 font-bold text-2xl">100%</div>
-            <div className="text-sm text-slate-600 font-medium">Commitment to your well-being</div>
-          </motion.div>
-        </motion.div>
-
-        {/* Mobile Fallback - Stats Cards (shown when 3D is hidden) */}
+        {/* Stats Cards - Bottom Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="lg:hidden mt-12"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-16 lg:mt-20"
         >
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Patient Satisfaction Card */}
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-lg">
+            <div className="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/20">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                <div className="w-8 h-8 rounded-full bg-yellow-400/20 flex items-center justify-center text-yellow-400">
                   <Star size={14} fill="currentColor" />
                 </div>
-                <span className="text-xs text-slate-500 font-medium">Patients Trust Us</span>
+                <span className="text-xs text-white/70 font-medium">Patients Trust Us</span>
               </div>
-              <div className="text-slate-900 font-bold text-3xl mb-1">99%</div>
-              <div className="text-sm text-slate-600">Satisfaction Rate</div>
-              <div className="w-full bg-slate-100 h-1.5 mt-3 rounded-full overflow-hidden">
-                <div className="bg-yellow-500 h-full w-[99%]"></div>
+              <div className="text-white font-bold text-3xl mb-1">99%</div>
+              <div className="text-sm text-white/60">Satisfaction Rate</div>
+              <div className="w-full bg-white/10 h-1.5 mt-3 rounded-full overflow-hidden">
+                <div className="bg-yellow-400 h-full w-[99%]"></div>
               </div>
             </div>
 
             {/* Commitment Card */}
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-lg">
+            <div className="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/20">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                <div className="w-8 h-8 rounded-full bg-red-400/20 flex items-center justify-center text-red-400">
                   <Heart size={14} fill="currentColor" />
                 </div>
-                <span className="text-xs text-slate-500 font-medium">Our Promise</span>
+                <span className="text-xs text-white/70 font-medium">Our Promise</span>
               </div>
-              <div className="text-slate-900 font-bold text-3xl mb-1">100%</div>
-              <div className="text-sm text-slate-600">Commitment</div>
-              <div className="w-full bg-slate-100 h-1.5 mt-3 rounded-full overflow-hidden">
+              <div className="text-white font-bold text-3xl mb-1">100%</div>
+              <div className="text-sm text-white/60">Commitment</div>
+              <div className="w-full bg-white/10 h-1.5 mt-3 rounded-full overflow-hidden">
                 <div className="bg-red-400 h-full w-full"></div>
               </div>
             </div>
 
             {/* Active Doctors Card */}
-            <div className="bg-gradient-to-br from-primary-600 to-primary-700 p-5 rounded-2xl shadow-lg text-white">
+            <div className="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/20">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-primary-400/20 flex items-center justify-center text-primary-400">
                   <Activity size={14} />
                 </div>
-                <span className="text-xs font-medium opacity-80">Network</span>
+                <span className="text-xs text-white/70 font-medium">Network</span>
               </div>
-              <div className="font-bold text-3xl mb-1">500+</div>
-              <div className="text-sm opacity-80">Active Doctors</div>
+              <div className="text-white font-bold text-3xl mb-1">500+</div>
+              <div className="text-sm text-white/60">Active Doctors</div>
             </div>
 
             {/* Global Reach Card */}
-            <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 p-5 rounded-2xl shadow-lg text-white">
+            <div className="bg-white/10 backdrop-blur-sm p-5 rounded-2xl border border-white/20">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-cyan-400/20 flex items-center justify-center text-cyan-400">
                   <ShieldCheck size={14} />
                 </div>
-                <span className="text-xs font-medium opacity-80">Coverage</span>
+                <span className="text-xs text-white/70 font-medium">Coverage</span>
               </div>
-              <div className="font-bold text-3xl mb-1">30+</div>
-              <div className="text-sm opacity-80">Countries</div>
+              <div className="text-white font-bold text-3xl mb-1">30+</div>
+              <div className="text-sm text-white/60">Countries</div>
             </div>
           </div>
         </motion.div>

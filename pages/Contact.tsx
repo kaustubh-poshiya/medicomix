@@ -18,11 +18,12 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-slate-50 min-h-screen pb-20 font-sans">
       <PageHeader
         title="Get in Touch"
         subtitle="Have questions about our products or want to explore a partnership? We'd love to hear from you."
         variant="gradient"
+        backgroundImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2000&auto=format&fit=crop"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">

@@ -49,7 +49,7 @@ export const Navbar: React.FC = () => {
                   <Activity size={20} />
                 </div>
               </div>
-              <span className={`text-xl font-bold tracking-tight transition-colors ${isScrolled ? 'text-slate-900' : 'text-slate-900'} group-hover:text-primary-600`}>
+              <span className={`text-xl font-bold tracking-tight transition-colors ${isScrolled ? 'text-slate-900' : 'text-white'} group-hover:text-primary-400`}>
                 Medicomix
               </span>
             </Link>
@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-medium transition-colors relative hover:text-primary-600 ${location.pathname === link.path ? 'text-primary-600' : 'text-slate-600'
+                  className={`text-sm font-medium transition-colors relative ${isScrolled ? 'hover:text-primary-600' : 'hover:text-primary-400'} ${location.pathname === link.path ? (isScrolled ? 'text-primary-600' : 'text-primary-400') : (isScrolled ? 'text-slate-600' : 'text-white/90')
                     }`}
                 >
                   <span className="relative z-10">{link.name}</span>
@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
                     />
                   )}
                   <motion.div
-                    className="absolute inset-0 bg-slate-100 rounded-lg -z-10"
+                    className={`absolute inset-0 rounded-lg -z-10 ${isScrolled ? 'bg-slate-100' : 'bg-white/10'}`}
                     initial={{ scale: 0.9, opacity: 0 }}
                     whileHover={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.2 }}
@@ -79,12 +79,12 @@ export const Navbar: React.FC = () => {
                 </Link>
               ))}
 
-              <div className="w-px h-6 bg-slate-200 mx-2"></div>
+              <div className={`w-px h-6 mx-2 ${isScrolled ? 'bg-slate-200' : 'bg-white/30'}`}></div>
 
               {/* Search Trigger */}
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2 text-slate-500 hover:text-primary-600 hover:bg-slate-100 rounded-full transition-all"
+                className={`p-2 rounded-full transition-all ${isScrolled ? 'text-slate-500 hover:text-primary-600 hover:bg-slate-100' : 'text-white/80 hover:text-white hover:bg-white/10'}`}
                 aria-label="Search"
               >
                 <Search size={18} />
@@ -106,7 +106,7 @@ export const Navbar: React.FC = () => {
             <div className="flex items-center gap-4 md:hidden">
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2 text-slate-600 hover:text-primary-600"
+                className={`p-2 ${isScrolled ? 'text-slate-600 hover:text-primary-600' : 'text-white hover:text-primary-400'}`}
                 aria-label="Search"
               >
                 <Search size={24} />
@@ -114,7 +114,7 @@ export const Navbar: React.FC = () => {
 
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-slate-900 p-3 hover:bg-slate-100 rounded-lg transition-colors touch-manipulation"
+                className={`p-3 rounded-lg transition-colors touch-manipulation ${isScrolled ? 'text-slate-900 hover:bg-slate-100' : 'text-white hover:bg-white/10'}`}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

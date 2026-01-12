@@ -61,7 +61,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
       {/* Optional background image */}
       {backgroundImage && (
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
+          className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
       )}
