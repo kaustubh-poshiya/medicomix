@@ -15,11 +15,11 @@ export const HeroBackground = () => {
           {/* Mobile-optimized portrait image */}
           <source
             media="(max-width: 768px)"
-            srcSet="/dna-spiral-mobile.png"
+            srcSet="/dna-web.webp"
           />
           {/* Desktop landscape image */}
           <img
-            src="/dna-spiral.jpeg"
+            src="/dna-web.webp"
             alt=""
             className="w-full h-full object-cover"
           />
@@ -27,7 +27,7 @@ export const HeroBackground = () => {
       </motion.div>
 
       {/* Gradient Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-900/50 to-slate-900/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-slate-900/30 to-slate-900/10" />
 
       {/* Subtle animated glow effect */}
       <motion.div
